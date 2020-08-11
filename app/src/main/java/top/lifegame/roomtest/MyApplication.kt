@@ -1,8 +1,6 @@
 package top.lifegame.roomtest
 
 import android.app.Application
-import androidx.emoji.bundled.BundledEmojiCompatConfig
-import androidx.emoji.text.EmojiCompat
 import com.didichuxing.doraemonkit.DoraemonKit
 
 class MyApplication : Application() {
