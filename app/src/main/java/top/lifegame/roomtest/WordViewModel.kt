@@ -8,13 +8,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class WordViewModel(application: Application) : AndroidViewModel(application) {
-    private val repository: WordRepository
+    private val repository: WordRepository = WordRepository(application, viewModelScope)
 
     val allWords: LiveData<List<Word>>
 
     init {
-        val wordDao = WordRoomDatabase.getDatabase(application, viewModelScope).wordDao()
-        repository = WordRepository(wordDao)
         allWords = repository.allWords
     }
 
